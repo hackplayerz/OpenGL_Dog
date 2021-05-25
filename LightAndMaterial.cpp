@@ -31,7 +31,7 @@ static GLfloat theta[13] = { 60,0,-30, 180,0,180,0,180,0,180,0,-30,30 };
 
 static GLint angle = 2;
 
-GLUquadricObj* t, * h, * lua, * lla, * rua, * rla, * lll, * rll, * rul, * lul, *tail;
+GLUquadricObj* t, * h, * lua, * lla, * rua, * rla, * lll, * rll, * rul, * lul, * tail;
 
 double size = 1.0;
 int offset = 0;
@@ -121,7 +121,7 @@ void LeftLowerLeg()
 void DrawTail()
 {
     glPushMatrix();
-    gluSphere(tail,0.3,10,10);
+    gluSphere(tail, 0.3, 10, 10);
     glPopMatrix();
 }
 
@@ -183,7 +183,7 @@ void Display(void)
     LeftLowerLeg();
 
     glPopMatrix();
-    
+
     glPushMatrix();
     glTranslatef(0, 0, -3);
     glRotatef(theta[11], 0, 1, 0);
@@ -214,10 +214,10 @@ void OnMouseDown(int btn, int state, int x, int y)
 
 void MenuEvent(int id)
 {
-    
+
     if (id < 11) angle = id;
     //if (id == 11) exit(0);
-    
+
 }
 
 void AnimationTimer(int value)
@@ -281,10 +281,10 @@ void MaterialMenu(int id)
     GLfloat copperAmbient[] = { 0.2568, 0.1376, 0.0860, 1.0 };
     GLfloat copperShininess[] = { 12.8 };
 
-    GLfloat yellowSpecular[] = { 1,1,1, 1.0 };
-    GLfloat yellowDiffuse[] = { 1,1,0, 1.0 };
-    GLfloat yellowAmbient[] = { 1,1,1, 1.0 };
-    GLfloat yellowShininess[] = { 50 };
+    GLfloat yellowSpecular[] = { .6f,.6f,.5f, 1.0 };
+    GLfloat yellowDiffuse[] = { .5f,.5f,0, 1.0 };
+    GLfloat yellowAmbient[] = { 0.25f,0.25f,0, 1.0 };
+    GLfloat yellowShininess[] = { 25 };
 
     GLfloat greenSpecular[] = { 1,0,0, 1.0 };
     GLfloat greenDiffuse[] = { 0,1,0, 1.0 };
@@ -298,42 +298,39 @@ void MaterialMenu(int id)
 
     switch (id)
     {
-    case MatMenuID::Gold:
-        printf("Gold");
-        glMaterialfv(GL_FRONT, GL_SPECULAR, goldSpecular);
-        glMaterialfv(GL_FRONT, GL_DIFFUSE, goldDiffuse);
-        glMaterialfv(GL_FRONT, GL_AMBIENT, goldAmbient);
-        glMaterialfv(GL_FRONT, GL_SHININESS, goldShininess);
-        break;
-    case MatMenuID::Copper:
-        glMaterialfv(GL_FRONT, GL_SPECULAR, copperSpecular);
-        glMaterialfv(GL_FRONT, GL_DIFFUSE, copperDiffuse);
-        glMaterialfv(GL_FRONT, GL_AMBIENT, copperAmbient);
-        glMaterialfv(GL_FRONT, GL_SHININESS, copperShininess);
-        break;
-    case MatMenuID::Green:
-        glMaterialfv(GL_FRONT, GL_SPECULAR, greenSpecular);
-        glMaterialfv(GL_FRONT, GL_DIFFUSE, greenDiffuse);
-        glMaterialfv(GL_FRONT, GL_AMBIENT, greenAmbient);
-        glMaterialfv(GL_FRONT, GL_SHININESS, greenShininess);
-        break;
-    case MatMenuID::White:
-        glMaterialfv(GL_FRONT, GL_SPECULAR, whiteSpecular);
-        glMaterialfv(GL_FRONT, GL_DIFFUSE, whiteDiffuse);
-        glMaterialfv(GL_FRONT, GL_AMBIENT, whiteAmbient);
-        glMaterialfv(GL_FRONT, GL_SHININESS, whiteShininess);
-        break;
-    case MatMenuID::Yellow:
-        glMaterialfv(GL_FRONT, GL_SPECULAR, yellowSpecular);
-        glMaterialfv(GL_FRONT, GL_DIFFUSE, yellowDiffuse);
-        glMaterialfv(GL_FRONT, GL_AMBIENT, yellowAmbient);
-        glMaterialfv(GL_FRONT, GL_SHININESS, yellowShininess);
-        break;
-    default:
-        break;
+        case MatMenuID::Gold:
+            glMaterialfv(GL_FRONT, GL_SPECULAR, goldSpecular);
+            glMaterialfv(GL_FRONT, GL_DIFFUSE, goldDiffuse);
+            glMaterialfv(GL_FRONT, GL_AMBIENT, goldAmbient);
+            glMaterialfv(GL_FRONT, GL_SHININESS, goldShininess);
+            break;
+        case MatMenuID::Copper:
+            glMaterialfv(GL_FRONT, GL_SPECULAR, copperSpecular);
+            glMaterialfv(GL_FRONT, GL_DIFFUSE, copperDiffuse);
+            glMaterialfv(GL_FRONT, GL_AMBIENT, copperAmbient);
+            glMaterialfv(GL_FRONT, GL_SHININESS, copperShininess);
+            break;
+        case MatMenuID::Green:
+            glMaterialfv(GL_FRONT, GL_SPECULAR, greenSpecular);
+            glMaterialfv(GL_FRONT, GL_DIFFUSE, greenDiffuse);
+            glMaterialfv(GL_FRONT, GL_AMBIENT, greenAmbient);
+            glMaterialfv(GL_FRONT, GL_SHININESS, greenShininess);
+            break;
+        case MatMenuID::White:
+            glMaterialfv(GL_FRONT, GL_SPECULAR, whiteSpecular);
+            glMaterialfv(GL_FRONT, GL_DIFFUSE, whiteDiffuse);
+            glMaterialfv(GL_FRONT, GL_AMBIENT, whiteAmbient);
+            glMaterialfv(GL_FRONT, GL_SHININESS, whiteShininess);
+            break;
+        case MatMenuID::Yellow:
+            glMaterialfv(GL_FRONT, GL_SPECULAR, yellowSpecular);
+            glMaterialfv(GL_FRONT, GL_DIFFUSE, yellowDiffuse);
+            glMaterialfv(GL_FRONT, GL_AMBIENT, yellowAmbient);
+            glMaterialfv(GL_FRONT, GL_SHININESS, yellowShininess);
+            break;
+        default:
+            break;
     }
-
-    printf("mat redisplay");
     glutPostRedisplay();
 }
 
@@ -347,9 +344,9 @@ enum LightMenuID
 
 void LightMenu(int id)
 {
-    if (LightMenuID::LightRed)
+    if (id == LightMenuID::LightRed)
     {
-        GLfloat ambient[] = { 1,0,0, 1.0 }; 	//Á¶¸í Æ¯¼º	
+        GLfloat ambient[] = { 1,0,0, 1.0 }; 	//ì¡°ëª… íŠ¹ì„±	
         GLfloat diffuse[] = { 0.8, 0.7, 0.6, 1.0 };
         GLfloat specular[] = { 1.0, 1.0, 1.0, 1.0 };
 
@@ -357,9 +354,9 @@ void LightMenu(int id)
         glLightfv(GL_LIGHT0, GL_DIFFUSE, diffuse);
         glLightfv(GL_LIGHT0, GL_SPECULAR, specular);
     }
-    else if (LightMenuID::LightGreen)
+    else if (id == LightMenuID::LightGreen)
     {
-        GLfloat ambient[] = {0,1,0, 1.0 }; 	//Á¶¸í Æ¯¼º	
+        GLfloat ambient[] = { 0,1,0, 1.0 }; 	//ì¡°ëª… íŠ¹ì„±	
         GLfloat diffuse[] = { 0.8, 0.7, 0.6, 1.0 };
         GLfloat specular[] = { 1.0, 1.0, 1.0, 1.0 };
 
@@ -367,9 +364,9 @@ void LightMenu(int id)
         glLightfv(GL_LIGHT0, GL_DIFFUSE, diffuse);
         glLightfv(GL_LIGHT0, GL_SPECULAR, specular);
     }
-    else if (LightMenuID::LightBlue)
+    else if (id == LightMenuID::LightBlue)
     {
-        GLfloat ambient[] = { 0,0,1, 1.0 }; 	//Á¶¸í Æ¯¼º	
+        GLfloat ambient[] = { 0,0,1, 1.0 }; 	//ì¡°ëª… íŠ¹ì„±	
         GLfloat diffuse[] = { 0.8, 0.7, 0.6, 1.0 };
         GLfloat specular[] = { 1.0, 1.0, 1.0, 1.0 };
 
@@ -377,9 +374,9 @@ void LightMenu(int id)
         glLightfv(GL_LIGHT0, GL_DIFFUSE, diffuse);
         glLightfv(GL_LIGHT0, GL_SPECULAR, specular);
     }
-    else if (LightMenuID::LightWhite)
+    else if (id == LightMenuID::LightWhite)
     {
-        GLfloat ambient[] = { 1,1,1, 1.0 }; 	//Á¶¸í Æ¯¼º	
+        GLfloat ambient[] = { 1,1,1, 1.0 }; 	//ì¡°ëª… íŠ¹ì„±	
         GLfloat diffuse[] = { 1, 1, 1, 1.0 };
         GLfloat specular[] = { 1.0, 1.0, 1.0, 1.0 };
 
@@ -475,18 +472,18 @@ int main(int argc, char** argv)
     glutMouseFunc(OnMouseDown);
 
     GLint matMenu = glutCreateMenu(MaterialMenu);
-    glutAddMenuEntry("Gold", 1);
-    glutAddMenuEntry("Copper", 2);
-    glutAddMenuEntry("Yellow", 3);
-    glutAddMenuEntry("Green", 4);
-    glutAddMenuEntry("White", 5);
+    glutAddMenuEntry("Gold", MatMenuID::Gold);
+    glutAddMenuEntry("Copper", MatMenuID::Copper);
+    glutAddMenuEntry("Yellow", MatMenuID::Yellow);
+    glutAddMenuEntry("Green", MatMenuID::Green);
+    glutAddMenuEntry("White", MatMenuID::White);
 
 
     GLint lightMenu = glutCreateMenu(LightMenu);
-    glutAddMenuEntry("Red", 1);
-    glutAddMenuEntry("Green", 2);
-    glutAddMenuEntry("Blue", 3);
-    glutAddMenuEntry("white", 4);
+    glutAddMenuEntry("Red", LightMenuID::LightRed);
+    glutAddMenuEntry("Green", LightMenuID::LightGreen);
+    glutAddMenuEntry("Blue", LightMenuID::LightBlue);
+    glutAddMenuEntry("White", LightMenuID::LightWhite);
 
     glutCreateMenu(WalkMenu);
     glutAddMenuEntry("walk", 0);
