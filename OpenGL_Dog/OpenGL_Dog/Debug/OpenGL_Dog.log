@@ -1,0 +1,16 @@
+﻿  DogWithFace.cpp
+D:\WKU\3-1\OpenGL\OpenGL_Dog\OpenGL_Dog\DogWithFace.cpp(249,81): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+D:\WKU\3-1\OpenGL\OpenGL_Dog\OpenGL_Dog\DogWithFace.cpp(259,78): warning C4305: '인수': 'double'에서 'GLfloat'(으)로 잘립니다.
+D:\WKU\3-1\OpenGL\OpenGL_Dog\OpenGL_Dog\DogWithFace.cpp(355,60): warning C4305: '초기화 중': 'double'에서 'GLfloat'(으)로 잘립니다.
+D:\WKU\3-1\OpenGL\OpenGL_Dog\OpenGL_Dog\DogWithFace.cpp(356,59): warning C4305: '초기화 중': 'double'에서 'GLfloat'(으)로 잘립니다.
+D:\WKU\3-1\OpenGL\OpenGL_Dog\OpenGL_Dog\DogWithFace.cpp(357,59): warning C4305: '초기화 중': 'double'에서 'GLfloat'(으)로 잘립니다.
+D:\WKU\3-1\OpenGL\OpenGL_Dog\OpenGL_Dog\DogWithFace.cpp(358,38): warning C4305: '초기화 중': 'double'에서 'GLfloat'(으)로 잘립니다.
+D:\WKU\3-1\OpenGL\OpenGL_Dog\OpenGL_Dog\DogWithFace.cpp(360,62): warning C4305: '초기화 중': 'double'에서 'GLfloat'(으)로 잘립니다.
+D:\WKU\3-1\OpenGL\OpenGL_Dog\OpenGL_Dog\DogWithFace.cpp(361,61): warning C4305: '초기화 중': 'double'에서 'GLfloat'(으)로 잘립니다.
+D:\WKU\3-1\OpenGL\OpenGL_Dog\OpenGL_Dog\DogWithFace.cpp(362,61): warning C4305: '초기화 중': 'double'에서 'GLfloat'(으)로 잘립니다.
+D:\WKU\3-1\OpenGL\OpenGL_Dog\OpenGL_Dog\DogWithFace.cpp(363,40): warning C4305: '초기화 중': 'double'에서 'GLfloat'(으)로 잘립니다.
+D:\WKU\3-1\OpenGL\OpenGL_Dog\OpenGL_Dog\DogWithFace.cpp(372,49): warning C4305: '초기화 중': 'double'에서 'GLfloat'(으)로 잘립니다.
+D:\WKU\3-1\OpenGL\OpenGL_Dog\OpenGL_Dog\DogWithFace.cpp(431,50): warning C4305: '초기화 중': 'double'에서 'GLfloat'(으)로 잘립니다.
+D:\WKU\3-1\OpenGL\OpenGL_Dog\OpenGL_Dog\DogWithFace.cpp(441,50): warning C4305: '초기화 중': 'double'에서 'GLfloat'(으)로 잘립니다.
+D:\WKU\3-1\OpenGL\OpenGL_Dog\OpenGL_Dog\DogWithFace.cpp(451,50): warning C4305: '초기화 중': 'double'에서 'GLfloat'(으)로 잘립니다.
+  OpenGL_Dog.vcxproj -> D:\WKU\3-1\OpenGL\OpenGL_Dog\Debug\OpenGL_Dog.exe
